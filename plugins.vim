@@ -3,12 +3,10 @@ set nocompatible              " be iMproved, required
 
 call plug#begin()
 
-Plug 'preservim/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'b3nj5m1n/kommentary'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'editorconfig/editorconfig-vim'
@@ -53,10 +51,9 @@ Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 
 " LSP Plugins
 Plug 'onsails/lspkind-nvim'
-Plug 'nvim-lua/lsp-status.nvim'
 Plug 'arkav/lualine-lsp-progress'
-" Plug 'jose-elias-alvarez/null-ls.nvim'
-" Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 call plug#end()            " required
 filetype plugin indent on    " required
