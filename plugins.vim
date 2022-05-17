@@ -5,7 +5,6 @@ call plug#begin()
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'b3nj5m1n/kommentary'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
@@ -13,11 +12,15 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'windwp/nvim-autopairs'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-fugitive'
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'windwp/nvim-ts-autotag'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'APZelos/blamer.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'numToStr/Comment.nvim'
+
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
