@@ -1,21 +1,9 @@
-function! StartUp()
-    if !argc() && !exists("s:std_in")
-        NERDTree
-    end
-    if argc() && isdirectory(argv()[0]) && !exists("s:std_in")
-        exe 'NERDTree' argv()[0]
-        wincmd p
-        ene
-    end
-endfunction
-
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * call StartUp()
 
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 
 if (has("termguicolors"))
   set termguicolors
@@ -156,10 +144,10 @@ nnoremap <leader>fc <cmd>Telescope find_files cwd=. find_command=rg,--ignore,--h
 " Vim Fugitive shortcuts
 nnoremap <leader>ds :Gdiffsplit<cr>
 
-" NERDTree
-nnoremap <leader>s :NERDTreeToggle<CR>
+" NvimTree
+nnoremap <leader>s :lua require("nvim-tree").toggle(false, true)<CR>
 nnoremap <leader>mn :NERDTreeMirror<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>f :NvimTreeFindFile<CR>
 
 " load lua scripts
 lua require('jvrviegas')
