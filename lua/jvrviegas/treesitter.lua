@@ -25,4 +25,4 @@ configs.setup {
 }
 
 local parser_config = parsers.get_parser_configs()
-parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
+parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
