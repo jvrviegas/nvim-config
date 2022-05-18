@@ -166,15 +166,12 @@ null_ls.setup({
 		formatting.stylua,
 		-- diagnostics
 		diagnostics.eslint_d,
-		diagnostics.editorconfig_checker,
 		diagnostics.luacheck,
 		diagnostics.shellcheck.with({
 			diagnostics_format = diagnostics_code_template,
 		}),
 		-- code actions
 		code_actions.eslint_d,
-		code_actions.gitsigns,
-		code_actions.gitrebase,
 		code_actions.gitsigns,
 		code_actions.gitrebase,
 		-- hover
