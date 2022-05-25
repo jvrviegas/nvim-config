@@ -162,10 +162,18 @@ local hover = null_ls.builtins.hover
 null_ls.setup({
 	sources = {
 		-- formatting
-		formatting.prettierd,
+		formatting.prettierd.with({
+			condition = function(utils)
+				return utils.root_has_file({ "prettier.config.js", ".prettierrc", ".prettierrc.json" })
+			end,
+		}),
 		formatting.stylua,
 		-- diagnostics
-		diagnostics.eslint_d,
+		diagnostics.eslint_d.with({
+			condition = function(utils)
+				return utils.root_has_file({ ".eslintrc.json", ".eslintrc.js" })
+			end,
+		}),
 		diagnostics.luacheck,
 		diagnostics.shellcheck.with({
 			diagnostics_format = diagnostics_code_template,
