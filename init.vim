@@ -3,7 +3,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+" autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 
 if (has("termguicolors"))
   set termguicolors
