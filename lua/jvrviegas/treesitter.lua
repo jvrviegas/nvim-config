@@ -13,6 +13,9 @@ configs.setup({
 	autotag = {
 		enable = true,
 	},
+	autopais = {
+		enable = true,
+	},
 	ensure_installed = {
 		"tsx",
 		"typescript",
