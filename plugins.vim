@@ -10,13 +10,15 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'windwp/nvim-autopairs'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'mg979/vim-visual-multi', { 'branch': 'master' }
 Plug 'tpope/vim-fugitive'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'APZelos/blamer.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'numToStr/Comment.nvim'
+Plug 'folke/trouble.nvim'
+Plug 'akinsho/toggleterm.nvim', { 'tag': 'v1.*'}
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
@@ -46,7 +48,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-" Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
 " Snippets
 Plug 'L3MON4D3/LuaSnip' " Snippets plugin

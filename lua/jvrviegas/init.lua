@@ -7,6 +7,8 @@ require("jvrviegas.lualine")
 require("jvrviegas.treesitter")
 require("jvrviegas.gitsigns")
 require("jvrviegas.comment")
+require("jvrviegas.trouble")
+require("jvrviegas.toggleterm")
 
 vim.cmd([[let g:blamer_enabled = 1]])
 vim.cmd([[let g:blamer_delay = 500]])
