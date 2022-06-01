@@ -17,9 +17,6 @@ let $MYPLUGINS = '~/.config/nvim/plugins.vim'
 " load plugins managed by Plug
 exe 'so '.$MYPLUGINS
 
-" Create default mappings
-let g:NERDCreateDefaultMappings = 1
-
 " vim icons file type
 set encoding=utf8
 let g:airline_powerline_fonts = 1
