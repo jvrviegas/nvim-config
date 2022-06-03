@@ -1,9 +1,4 @@
 local nvim_lsp = require("lspconfig")
-local null_ls = require("null-ls")
-
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-local border_opts = { border = "single", focusable = false, scope = "line" }
 
 --[[ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -17,6 +12,7 @@ local border_opts = { border = "single", focusable = false, scope = "line" }
     }
 )]]
 
+local border_opts = { border = "single", focusable = false, scope = "line" }
 vim.diagnostic.config({
 	float = border_opts,
 })
@@ -24,10 +20,10 @@ vim.diagnostic.config({
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, border_opts)
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, border_opts)
 
---[[ vim.fn.sign_define("LspDiagnosticsSignError", { text = "", texthl = "LspDiagnosticsDefaultError" })
+vim.fn.sign_define("LspDiagnosticsSignError", { text = "", texthl = "LspDiagnosticsDefaultError" })
 vim.fn.sign_define("LspDiagnosticsSignWarning", { text = "", texthl = "LspDiagnosticsDefaultWarning" })
 vim.fn.sign_define("LspDiagnosticsSignInformation", { text = "", texthl = "LspDiagnosticsDefaultInformation" })
-vim.fn.sign_define("LspDiagnosticsSignHint", { text = "", texthl = "LspDiagnosticsDefaultHint" }) ]]
+vim.fn.sign_define("LspDiagnosticsSignHint", { text = "", texthl = "LspDiagnosticsDefaultHint" })
 
 -- Mapping Opts
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -88,102 +84,13 @@ local on_attach = function(client, bufnr)
 	end
 end
 
-nvim_lsp.tsserver.setup({
-	on_attach = function(client, bufnr)
-		client.resolved_capabilities.document_formatting = false
-		client.resolved_capabilities.document_range_formatting = false
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
-		on_attach(client, bufnr)
-	end,
-	capabilities = capabilities,
-	flags = {
-		debounce_text_changes = 150,
-	},
-})
-
--- Lua Configs
-USER = vim.fn.expand("$USER")
-
-local sumneko_root_path = ""
-local sumneko_binary = ""
-
-if vim.fn.has("mac") == 1 then
-	sumneko_root_path = "/Users/" .. USER .. "/.config/ls/lua-language-server"
-	sumneko_binary = "/Users/" .. USER .. "/.config/ls/lua-language-server/bin/lua-language-server"
-elseif vim.fn.has("unix") == 1 then
-	sumneko_root_path = "/home/" .. USER .. "/.config/ls/lua-language-server"
-	sumneko_binary = "/home/" .. USER .. "/.config/ls/lua-language-server/bin/Linux/lua-language-server"
-else
-	print("Unsupported system for sumneko")
+for _, server in ipairs({
+	"null-ls",
+	"sumneko_lua",
+	"tsserver",
+}) do
+	require("jvrviegas.lsp." .. server).setup(on_attach, capabilities)
 end
-
-nvim_lsp.sumneko_lua.setup({
-	on_attach = on_attach,
-	cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
-	settings = {
-		Lua = {
-			runtime = {
-				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-				version = "LuaJIT",
-				-- Setup your lua path
-				path = vim.split(package.path, ";"),
-			},
-			diagnostics = {
-				-- Get the language server to recognize the `vim` global
-				enable = true,
-				globals = {
-					"global",
-					"vim",
-					"use",
-					"describe",
-					"it",
-					"assert",
-					"before_each",
-					"after_each",
-				},
-			},
-			workspace = {
-				-- Make the server aware of Neovim runtime files
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-				},
-			},
-		},
-	},
-})
-
-local diagnostics_code_template = "[#{s}] #{m} (#{c})"
-local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
-local code_actions = null_ls.builtins.code_actions
-local hover = null_ls.builtins.hover
-
-null_ls.setup({
-	sources = {
-		-- formatting
-		formatting.prettierd.with({
-			condition = function(utils)
-				return utils.root_has_file({ "prettier.config.js", ".prettierrc", ".prettierrc.json" })
-			end,
-		}),
-		formatting.stylua,
-		-- diagnostics
-		diagnostics.eslint_d.with({
-			condition = function(utils)
-				return utils.root_has_file({ ".eslintrc.json", ".eslintrc.js" })
-			end,
-		}),
-		diagnostics.luacheck,
-		diagnostics.shellcheck.with({
-			diagnostics_format = diagnostics_code_template,
-		}),
-		-- code actions
-		code_actions.eslint_d,
-		code_actions.gitsigns,
-		code_actions.gitrebase,
-		-- hover
-		hover.dictionary,
-	},
-	on_attach = on_attach,
-})
