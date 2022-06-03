@@ -64,7 +64,7 @@ nvim_lsp.tsserver.setup{
 local another_capabilities = vim.lsp.protocol.make_client_capabilities()
 another_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-nvim_lsp.cssmodules_ls.setup {
+--[[ nvim_lsp.cssmodules_ls.setup {
     capabilities = capabilities,
 }
 
@@ -79,7 +79,7 @@ nvim_lsp.html.setup{
 nvim_lsp.prismals.setup {
     on_attach = on_attach,
     capabilities = capabilities,
-}
+} ]]
 
 -- Lua Configs
 USER = vim.fn.expand('$USER')
