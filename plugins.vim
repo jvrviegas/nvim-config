@@ -55,6 +55,8 @@ Plug 'L3MON4D3/LuaSnip' " Snippets plugin
 Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
 
 " LSP Plugins
+Plug 'jose-elias-alvarez/typescript.nvim'
+Plug 'folke/lua-dev.nvim'
 Plug 'onsails/lspkind-nvim'
 Plug 'arkav/lualine-lsp-progress'
 Plug 'jose-elias-alvarez/null-ls.nvim'
