@@ -32,8 +32,8 @@ telescope.setup({
 		file_sorter = require("telescope.sorters").get_fuzzy_sorter,
 		file_ignore_patterns = {
 			"*/tmp/*",
-			"**/coverage/*",
-			"**/lib/*",
+			"coverage",
+			"lib",
 			"/build/.*",
 			"*/build/*",
 			"*/lib/*",
@@ -57,7 +57,6 @@ telescope.setup({
 		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-
 		mappings = {
 			i = {
 				["<C-x>"] = false,
