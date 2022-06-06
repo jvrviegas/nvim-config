@@ -136,7 +136,9 @@ nnoremap <C-p> <cmd>Telescope find_files find_command=rg,--ignore,--hidden,--fil
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fc <cmd>Telescope find_files cwd=. find_command=rg,--ignore,--hidden,--files<cr>
+nnoremap <leader>fr <cmd>Telescope lsp_references<cr>
+nnoremap <leader>fgc <cmd>Telescope git_commits<cr>
+nnoremap <leader>fbc <cmd>Telescope git_bcommits<cr>
 
 " Vim Fugitive shortcuts
 nnoremap <leader>ds :Gdiffsplit<cr>
