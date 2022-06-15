@@ -51,7 +51,7 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{ name = "cmp_tabnine" },
+		-- { name = "cmp_tabnine" },
 		{ name = "luasnip" },
 		{ name = "treesitter" },
 		{ name = "path" },
