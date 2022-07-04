@@ -64,5 +64,4 @@ Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 call plug#end()            " required
 filetype plugin indent on    " required
-colorscheme onenord
 highlight Normal guibg=none

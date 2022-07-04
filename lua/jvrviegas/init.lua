@@ -1,3 +1,4 @@
+require("jvrviegas.theme")
 require("jvrviegas.nvim-tree")
 require("jvrviegas.telescope")
 require("jvrviegas.cmp")
