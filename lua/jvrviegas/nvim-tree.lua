@@ -5,6 +5,10 @@ nvim_tree.setup({
 	view = {
 		side = "left",
 		width = 30,
-		auto_resize = true,
 	},
+    actions = {
+        open_file = {
+            resize_window = true,
+        }
+    }
 })
