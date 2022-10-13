@@ -79,8 +79,8 @@ local on_attach = function(client, bufnr)
 	buf_map(bufnr, "n", "[h", ":LspPrevHunk<CR>")
 	buf_map(bufnr, "n", "<leader>hp", ":LspPreviewHunk<CR>")
 
-	if client.resolved_capabilities.document_formatting then
-		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+	if client.server_capabilities.documentFormattingProvider then
+		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
 	end
 end
 
@@ -89,7 +89,6 @@ capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 for _, server in ipairs({
 	"null-ls",
-	"sumneko_lua",
 	"tsserver",
 }) do
 	require("jvrviegas.lsp." .. server).setup(on_attach, capabilities)
