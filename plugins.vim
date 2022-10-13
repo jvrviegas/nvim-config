@@ -18,7 +18,7 @@ Plug 'APZelos/blamer.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'folke/trouble.nvim'
-Plug 'akinsho/toggleterm.nvim', { 'tag': 'v1.*'}
+Plug 'akinsho/toggleterm.nvim'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
