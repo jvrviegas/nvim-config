@@ -30,6 +30,7 @@ set relativenumber
 set signcolumn=yes
 set updatetime=100
 set inccommand=split
+set mouse=
 
 " always set autoindenting on
 set autoindent
