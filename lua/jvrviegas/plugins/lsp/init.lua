@@ -91,5 +91,5 @@ for _, server in ipairs({
 	"null-ls",
 	"tsserver",
 }) do
-	require("jvrviegas.lsp." .. server).setup(on_attach, capabilities)
+	require("jvrviegas.plugins.lsp." .. server).setup(on_attach, capabilities)
 end
