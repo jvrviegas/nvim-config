@@ -141,7 +141,9 @@ nnoremap <leader>fgc <cmd>Telescope git_commits<cr>
 nnoremap <leader>fbc <cmd>Telescope git_bcommits<cr>
 
 " Vim Fugitive shortcuts
+nnoremap <leader>gs :Git<cr>
 nnoremap <leader>ds :Gdiffsplit<cr>
+nnoremap <leader>gh <c-w>v:0Git log<cr>
 
 " NvimTree
 nnoremap <leader>s :lua require("nvim-tree").toggle(false, true)<CR>
