@@ -11,7 +11,7 @@ local sources = {
 	formatting.prettierd.with({
 		diagnostics_format = diagnostics_code_template,
 		condition = function(utils)
-			return utils.root_has_file({ "prettier.config.js", ".prettierrc", ".prettierrc.json" })
+			return utils.root_has_file({ "prettier.config.js", ".prettierrc", ".prettierrc.json", ".prettierrc.js" })
 		end,
 	}),
 	formatting.stylua,
