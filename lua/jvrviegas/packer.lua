@@ -11,7 +11,7 @@ packer.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use {'rmehri01/onenord.nvim', branch = 'main'}
+  use { 'rmehri01/onenord.nvim', branch = 'main' }
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
@@ -27,9 +27,9 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
   use 'editorconfig/editorconfig-vim'
+  use { 'mg979/vim-visual-multi', branch = 'master' }
+  use 'tpope/vim-fugitive'
   use 'windwp/nvim-autopairs'
-  use {'mg979/vim-visual-multi', branch = 'master' }
-  use 'dinhhuy258/git.nvim'
   use 'windwp/nvim-ts-autotag'
   use 'lewis6991/gitsigns.nvim'
   use 'APZelos/blamer.nvim'
@@ -39,7 +39,7 @@ packer.startup(function(use)
   use 'akinsho/toggleterm.nvim'
 
   -- Treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Icons
@@ -78,5 +78,6 @@ packer.startup(function(use)
   use 'arkav/lualine-lsp-progress'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+  use 'glepnir/lspsaga.nvim'
 
 end)
