@@ -35,6 +35,8 @@ telescope.setup({
 			"coverage",
 			"lib",
 			"/build/.*",
+			"/dist/.*",
+			"/lib/.*",
 			"*/build/*",
 			"*/lib/*",
 			"*/dist/*",
