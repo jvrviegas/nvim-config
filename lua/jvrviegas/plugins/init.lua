@@ -12,6 +12,4 @@ require("jvrviegas.plugins.trouble")
 require("jvrviegas.plugins.toggleterm")
 require("jvrviegas.plugins.lsp_kind")
 require("jvrviegas.plugins.lspsaga")
-
-vim.cmd([[let g:blamer_enabled = 1]])
-vim.cmd([[let g:blamer_delay = 500]])
+require("jvrviegas.plugins.blamer")
