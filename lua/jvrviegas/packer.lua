@@ -78,6 +78,6 @@ packer.startup(function(use)
   use 'arkav/lualine-lsp-progress'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
-  use 'glepnir/lspsaga.nvim'
+  use 'glepnir/lspsaga.nvim' -- LSP UIs
 
 end)
