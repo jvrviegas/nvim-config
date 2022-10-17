@@ -20,9 +20,9 @@ vim.opt.smartindent = true
 vim.opt.expandtab = true
 
 -- 2 spaces everywhere please!
-vim.opt.tabstop=2
-vim.opt.softtabstop=2
-vim.opt.shiftwidth=2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 
 -- don't wrap lines
 vim.opt.wrap = false
@@ -34,13 +34,13 @@ vim.opt.number = true
 vim.opt.hidden = true
 
 -- use many undos
-vim.opt.undolevels=50
+vim.opt.undolevels = 50
 
 -- SCROLLING
 -- ============================================
 -- show more lines around cursor when at the edge of file
-vim.opt.scrolloff=8
-vim.opt.sidescrolloff=8
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 
 -- SEARCH
 -- ======================================
