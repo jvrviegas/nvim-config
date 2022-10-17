@@ -1,15 +1,36 @@
-local border_opts = { border = "single", focusable = false, scope = "line" }
 vim.diagnostic.config({
-  float = border_opts,
+  float = {
+    source = "always"
+  },
+  update_in_insert = true,
 })
 
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, border_opts)
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, border_opts)
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    underline = true,
+    update_in_insert = false,
+    virtual_text = { spacing = 4, prefix = "●" },
+    severity_sort = true,
+  }
+)
 
-vim.fn.sign_define("LspDiagnosticsSignError", { text = "", texthl = "LspDiagnosticsDefaultError" })
-vim.fn.sign_define("LspDiagnosticsSignWarning", { text = "", texthl = "LspDiagnosticsDefaultWarning" })
-vim.fn.sign_define("LspDiagnosticsSignInformation", { text = "", texthl = "LspDiagnosticsDefaultInformation" })
-vim.fn.sign_define("LspDiagnosticsSignHint", { text = "", texthl = "LspDiagnosticsDefaultHint" })
+-- Diagnostic symbols in the sign column (gutter)
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●'
+  },
+  update_in_insert = true,
+  float = {
+    source = "always", -- Or "if_many"
+  },
+})
 
 -- Mapping Opts
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -57,10 +78,10 @@ local on_attach = function(client, bufnr)
   -- buf_map(bufnr, "n", "<C-k>", ":LspSignatureHelp<CR>")
   -- buf_map(bufnr, "n", "<space>rn", ":LspRename<CR>")
   -- buf_map(bufnr, "n", "<space>ca", ":LspCodeAction<CR>")
-  buf_map(bufnr, "n", "[d", ":LspDiagPrev<CR>")
-  buf_map(bufnr, "n", "]d", ":LspDiagNext<CR>")
-  buf_map(bufnr, "n", "<space>a", ":LspDiagLine<CR>")
-  buf_map(bufnr, "n", "<space>l", ":LspLocList<CR>")
+  -- buf_map(bufnr, "n", "[d", ":LspDiagPrev<CR>")
+  -- buf_map(bufnr, "n", "]d", ":LspDiagNext<CR>")
+  -- buf_map(bufnr, "n", "<space>a", ":LspDiagLine<CR>")
+  buf_map(bufnr, "n", "<space>l", ":LspLocList<CR>");
   buf_map(bufnr, "n", "]h", ":LspNextHunk<CR>")
   buf_map(bufnr, "n", "[h", ":LspPrevHunk<CR>")
   buf_map(bufnr, "n", "<leader>hp", ":LspPreviewHunk<CR>")
