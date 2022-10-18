@@ -79,5 +79,7 @@ packer.startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
   use 'glepnir/lspsaga.nvim' -- LSP UIs
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
 
 end)
