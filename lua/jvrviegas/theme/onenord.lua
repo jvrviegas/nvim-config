@@ -1,4 +1,4 @@
-local onenord = require("onenord")
+local onenord = require('onenord')
 
 local M = {}
 M.setup = function()
@@ -8,12 +8,12 @@ M.setup = function()
 		fade_nc = false, -- Fade non-current windows, making them more distinguishable
 		-- Style that is applied to various groups: see `highlight-args` for options
 		styles = {
-			comments = "NONE",
-			strings = "NONE",
-			keywords = "NONE",
-			functions = "NONE",
-			variables = "NONE",
-			diagnostics = "underline",
+			comments = 'NONE',
+			strings = 'NONE',
+			keywords = 'NONE',
+			functions = 'NONE',
+			variables = 'NONE',
+			diagnostics = 'underline',
 		},
 		disable = {
 			background = true, -- Disable setting the background color

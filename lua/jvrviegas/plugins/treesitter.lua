@@ -1,5 +1,5 @@
-local configs = require("nvim-treesitter.configs")
-local parsers = require("nvim-treesitter.parsers")
+local configs = require('nvim-treesitter.configs')
+local parsers = require('nvim-treesitter.parsers')
 
 configs.setup({
 	highlight = {
@@ -17,13 +17,13 @@ configs.setup({
 		enable = true,
 	},
 	ensure_installed = {
-		"tsx",
-		"typescript",
-		"json",
-		"html",
-		"scss",
-		"css",
-		"javascript",
+		'tsx',
+		'typescript',
+		'json',
+		'html',
+		'scss',
+		'css',
+		'javascript',
 	},
 	context_commentstring = {
 		enable = true,
@@ -31,4 +31,4 @@ configs.setup({
 })
 
 local parser_config = parsers.get_parser_configs()
-parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
+parser_config.tsx.filetype_to_parsername = { 'javascript', 'typescript.tsx' }
