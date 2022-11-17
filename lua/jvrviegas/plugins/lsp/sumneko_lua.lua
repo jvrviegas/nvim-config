@@ -8,9 +8,7 @@ local settings = {
       },
     },
     completion = {
-      showWord = "Disable",
-      callSnippet = "Disable",
-      keywordSnippet = "Disable",
+      callSnippet = "Replace",
     },
     workspace = {
       checkThirdParty = false,
@@ -22,14 +20,14 @@ local settings = {
 local M = {}
 
 M.setup = function(on_attach, capabilities)
-  local luadev = require("lua-dev").setup({
+  local neodev = require("neodev").setup({
     lspconfig = {
       on_attach = on_attach,
       settings = settings,
       capabilities = capabilities,
     },
   })
-  require("lspconfig").sumneko_lua.setup(luadev)
+  require("lspconfig")['sumneko_lua'].setup(neodev)
 end
 
 return M
