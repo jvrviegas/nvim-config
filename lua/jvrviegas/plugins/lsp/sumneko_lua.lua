@@ -2,17 +2,12 @@
 
 local settings = {
   Lua = {
-    diagnostics = {
-      globals = {
-        "vim",
-      },
-    },
     completion = {
-      callSnippet = "Replace",
+      callSnippet = 'Replace',
     },
     workspace = {
       checkThirdParty = false,
-      library = vim.api.nvim_get_runtime_file("", true),
+      -- library = vim.api.nvim_get_runtime_file('', true),
     },
   },
 }
@@ -20,14 +15,12 @@ local settings = {
 local M = {}
 
 M.setup = function(on_attach, capabilities)
-  local neodev = require("neodev").setup({
-    lspconfig = {
-      on_attach = on_attach,
-      settings = settings,
-      capabilities = capabilities,
-    },
+  require('neodev').setup({})
+  require('lspconfig')['sumneko_lua'].setup({
+    on_attach = on_attach,
+    settings = settings,
+    capabilities = capabilities,
   })
-  require("lspconfig")['sumneko_lua'].setup(neodev)
 end
 
 return M
