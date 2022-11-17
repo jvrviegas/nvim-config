@@ -44,6 +44,11 @@ keymap.set('n', '<leader>v', '"+gP')
 keymap.set('n', '<leader>J', 'yyp')
 keymap.set('n', '<leader>K', 'yyP')
 
+keymap.set('n', '<leader>>', ':exe "vertical resize " . (winwidth(0) * 3/2)<CR>', opts)
+keymap.set('n', '<leader><', ':exe "vertical resize " . (winwidth(0) * 2/3)<CR>', opts)
+keymap.set('n', '<leader>+', ':exe "resize " . (winheight(0) * 3/2)<CR>', opts)
+keymap.set('n', '<leader>-', ':exe "resize " . (winheight(0) * 2/3)<CR>', opts)
+
 -- Vim Telescope shortcuts
 -- Find files using Telescope command-line sugar.
 keymap.set('n', '<C-p>', '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files<cr>')
