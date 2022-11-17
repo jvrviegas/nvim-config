@@ -37,6 +37,7 @@ packer.startup(function(use)
   use 'numToStr/Comment.nvim'
   use 'folke/trouble.nvim'
   use 'akinsho/toggleterm.nvim'
+  use 'norcalli/nvim-colorizer.lua'
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -73,7 +74,7 @@ packer.startup(function(use)
 
   -- LSP Plugins
   use 'jose-elias-alvarez/typescript.nvim'
-  use 'folke/lua-dev.nvim'
+  use 'folke/neodev.nvim'
   use 'onsails/lspkind-nvim'
   use 'arkav/lualine-lsp-progress'
   use 'jose-elias-alvarez/null-ls.nvim'
