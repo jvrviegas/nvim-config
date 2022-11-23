@@ -81,11 +81,33 @@ telescope.setup({
 telescope.load_extension('fzy_native')
 
 local M = {}
+
+M.reload_modules = function()
+	-- Because TJ gave it to me.  Makes me happpy.  Put it next to his other
+	-- awesome things.
+	local lua_dirs = vim.fn.glob('./lua/*', false, true)
+	for _, dir in ipairs(lua_dirs) do
+		dir = string.gsub(dir, './lua/', '')
+		require('plenary.reload').reload_module(dir)
+	end
+end
+
 M.search_dotfiles = function()
 	local config_dir = vim.env.HOME .. '/.config/nvim'
 	require('telescope.builtin').find_files({
-		find_command = { 'rg', '--files', '!plugged/', '!autoload/', '--hidden', config_dir },
 		prompt_title = '< VimRC >',
+		cwd = config_dir,
+		hidden = true,
+	})
+end
+
+M.git_branches = function()
+	require('telescope.builtin').git_branches({
+		attach_mappings = function(_, map)
+			map('i', '<c-d>', actions.git_delete_branch)
+			map('n', '<c-d>', actions.git_delete_branch)
+			return true
+		end,
 	})
 end
 
