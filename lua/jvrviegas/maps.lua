@@ -57,6 +57,12 @@ keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 keymap.set('n', '<leader>fr', '<cmd>Telescope lsp_references<cr>')
 keymap.set('n', '<leader>fgc', '<cmd>Telescope git_commits<cr>')
 keymap.set('n', '<leader>fbc', '<cmd>Telescope git_bcommits<cr>')
+keymap.set('n', '<leader>vrc', function()
+	require('jvrviegas.plugins.telescope').search_dotfiles()
+end)
+keymap.set('n', '<leader>gc', function()
+	require('jvrviegas.plugins.telescope').git_branches()
+end)
 
 -- Vim Fugitive shortcuts
 keymap.set('n', '<leader>gs', ':Git<cr>')
