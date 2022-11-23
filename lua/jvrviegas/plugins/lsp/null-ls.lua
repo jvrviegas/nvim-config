@@ -8,12 +8,7 @@ local hover = null_ls.builtins.hover
 
 local sources = {
 	-- formatting
-	formatting.prettierd.with({
-		diagnostics_format = diagnostics_code_template,
-		condition = function(utils)
-			return utils.root_has_file({ 'prettier.config.js', '.prettierrc', '.prettierrc.json', '.prettierrc.js' })
-		end,
-	}),
+	formatting.eslint_d,
 	formatting.stylua,
 	-- diagnostics
 	diagnostics.eslint_d.with({
