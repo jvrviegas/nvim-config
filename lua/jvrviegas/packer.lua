@@ -53,7 +53,7 @@ packer.startup(function(use)
 	-- Plug 'morhetz/gruvbox'
 	-- Plug 'arcticicestudio/nord-vim'
 	-- Plug 'yonlu/omni.vim'
-	-- Plug 'folke/tokyonight.nvim'
+	use('folke/tokyonight.nvim')
 	-- Plug 'one-dark/onedark.nvim'
 
 	-- Syntax Plugins
