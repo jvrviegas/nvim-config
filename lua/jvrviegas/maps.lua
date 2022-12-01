@@ -44,6 +44,10 @@ keymap.set('n', '<leader>v', '"+gP')
 keymap.set('n', '<leader>J', 'yyp')
 keymap.set('n', '<leader>K', 'yyP')
 
+-- set keys to move tabs left and right
+keymap.set('n', '<A-Left>', '<cmd>-tabmove<cr>')
+keymap.set('n', '<A-Right>', '<cmd>+tabmove<cr>')
+
 keymap.set('n', '<leader>>', ':exe "vertical resize " . (winwidth(0) * 3/2)<CR>', opts)
 keymap.set('n', '<leader><', ':exe "vertical resize " . (winwidth(0) * 2/3)<CR>', opts)
 keymap.set('n', '<leader>+', ':exe "resize " . (winheight(0) * 3/2)<CR>', opts)
