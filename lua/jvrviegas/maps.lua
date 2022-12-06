@@ -44,6 +44,12 @@ keymap.set('n', '<leader>v', '"+gP')
 keymap.set('n', '<leader>J', 'yyp')
 keymap.set('n', '<leader>K', 'yyP')
 
+keymap.set('n', '<C-d>', '<C-d>zz')
+keymap.set('n', '<C-u>', '<C-u>zz')
+
+keymap.set('n', 'n', 'nzzzv')
+keymap.set('n', 'N', 'Nzzzv')
+
 -- set keys to move tabs left and right
 keymap.set('n', '<A-Left>', '<cmd>-tabmove<cr>')
 keymap.set('n', '<A-Right>', '<cmd>+tabmove<cr>')
