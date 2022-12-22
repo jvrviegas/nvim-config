@@ -21,7 +21,12 @@ packer.startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 	})
+	use({
+		'ggandor/leap.nvim',
+		requires = { 'tpope/vim-repeat' },
+	})
 
+	-- Variables
 	use('nvim-lua/plenary.nvim')
 	use('kyazdani42/nvim-tree.lua')
 	use('nvim-telescope/telescope.nvim')
