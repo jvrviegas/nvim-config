@@ -77,7 +77,8 @@ end)
 -- Vim Fugitive shortcuts
 keymap.set('n', '<leader>gs', ':Git<cr>')
 keymap.set('n', '<leader>ds', ':Gdiffsplit<cr>')
-keymap.set('n', '<leader>gh', '<c-w>v:0Git log<cr>')
+keymap.set('n', '<leader>gh', ':0Gclog<cr>')
+keymap.set('n', '<leader>cqf', ":call setqflist([], 'r') | cclose<cr>")
 
 -- NvimTree
 keymap.set('n', '<leader>s', ':lua require("nvim-tree").toggle(false, true)<CR>')
