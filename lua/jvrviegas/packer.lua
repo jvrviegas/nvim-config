@@ -43,6 +43,7 @@ packer.startup(function(use)
 	use('folke/trouble.nvim')
 	use('akinsho/toggleterm.nvim')
 	use('norcalli/nvim-colorizer.lua')
+	use('tpope/vim-unimpaired')
 
 	-- Treesitter
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
