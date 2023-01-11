@@ -67,16 +67,10 @@ packer.startup(function(use)
 
 	-- Completion Plugins
 	use('neovim/nvim-lspconfig')
-	use('hrsh7th/cmp-nvim-lsp')
-	use('hrsh7th/cmp-buffer')
-	use('hrsh7th/cmp-path')
-	use('hrsh7th/cmp-cmdline')
-	use('hrsh7th/nvim-cmp')
-	-- Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+	use('ms-jpq/coq_nvim', { branch = 'coq' })
 
 	-- Snippets
-	use('L3MON4D3/LuaSnip') -- Snippets plugin
-	use('saadparwaiz1/cmp_luasnip') -- Snippets source for nvim-cmp
+	use('ms-jpq/coq.artifacts', { branch = 'artifacts' })
 
 	-- LSP Plugins
 	use('jose-elias-alvarez/typescript.nvim')

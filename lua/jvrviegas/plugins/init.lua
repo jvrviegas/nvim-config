@@ -1,7 +1,7 @@
 require('jvrviegas.plugins.theme')
 require('jvrviegas.plugins.nvim-tree')
 require('jvrviegas.plugins.telescope')
-require('jvrviegas.plugins.cmp')
+require('jvrviegas.plugins.coq_nvim')
 require('jvrviegas.plugins.lsp')
 require('jvrviegas.plugins.autopairs')
 require('jvrviegas.plugins.lualine')
