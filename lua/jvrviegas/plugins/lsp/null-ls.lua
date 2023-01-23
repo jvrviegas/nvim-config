@@ -10,7 +10,9 @@ local sources = {
 	-- formatting
 	formatting.eslint_d,
 	formatting.stylua,
+	formatting.clang_format,
 	-- diagnostics
+	diagnostics.clang_check,
 	diagnostics.eslint_d.with({
 		diagnostics_format = diagnostics_code_template,
 		condition = function(utils)

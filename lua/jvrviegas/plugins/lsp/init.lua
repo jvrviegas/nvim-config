@@ -97,6 +97,7 @@ for _, server in ipairs({
 	'sumneko_lua',
 	'tsserver',
 	'cssls',
+	'clangd',
 }) do
 	require('jvrviegas.plugins.lsp.' .. server).setup(on_attach, capabilities)
 end
