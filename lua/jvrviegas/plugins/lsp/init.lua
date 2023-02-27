@@ -94,7 +94,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 for _, server in ipairs({
 	'null-ls',
-	'sumneko_lua',
+	'lua_ls',
 	'tsserver',
 	'cssls',
 	'clangd',
