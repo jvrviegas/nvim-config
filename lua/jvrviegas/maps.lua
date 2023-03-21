@@ -25,6 +25,9 @@ keymap.set('n', '<leader>w', ':w<cr>')
 -- set leader + q to quit file
 keymap.set('n', '<leader>q', ':q<cr>')
 
+-- set leader + r to switch between two most recent buffers
+keymap.set('n', '<leader>r', '<C-^>')
+
 -- set leader + sl to insert new line below with 2 spaces above
 keymap.set('n', '<leader>nlb', 'o<esc>o')
 
