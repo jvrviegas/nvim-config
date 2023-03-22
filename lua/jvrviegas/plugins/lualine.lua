@@ -1,7 +1,7 @@
 local lualine = require('lualine')
 
 local options = {
-	theme = 'tokyonight',
+	theme = 'rose-pine',
 }
 
 local sections = {
