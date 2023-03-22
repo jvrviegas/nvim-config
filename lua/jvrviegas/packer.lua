@@ -60,6 +60,7 @@ packer.startup(function(use)
 	-- Plug 'arcticicestudio/nord-vim'
 	-- Plug 'yonlu/omni.vim'
 	use('folke/tokyonight.nvim')
+	use({ 'rose-pine/neovim', as = 'rose-pine' })
 	-- Plug 'one-dark/onedark.nvim'
 
 	-- Syntax Plugins
