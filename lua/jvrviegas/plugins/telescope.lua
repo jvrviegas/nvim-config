@@ -4,16 +4,6 @@ local actions = require('telescope.actions')
 
 telescope.setup({
 	defaults = {
-		vimgrep_arguments = {
-			'rg',
-			'--color=never',
-			'--no-heading',
-			'--with-filename',
-			'--line-number',
-			'--column',
-			'--smart-case',
-			'-u',
-		},
 		prompt_prefix = '> ',
 		selection_caret = '> ',
 		entry_prefix = '  ',
@@ -34,6 +24,7 @@ telescope.setup({
 			'*/tmp/*',
 			'coverage',
 			'lib',
+			'dist',
 			'build',
 			'dist',
 			'/build/.*',
@@ -73,14 +64,16 @@ telescope.setup({
 		buffer_previewer_maker = require('telescope.previewers').buffer_previewer_maker,
 	},
 	extensions = {
-		fzy_native = {
-			override_generic_sorter = false, -- override the generic sorter
+		fzf = {
+			fuzzy = true, -- false will only do exact matching
+			override_generic_sorter = true, -- override the generic sorter
 			override_file_sorter = true, -- override the file sorter
+			case_mode = 'smart_case', -- or "ignore_case" or "respect_case"
 		},
 	},
 })
 
-telescope.load_extension('fzy_native')
+telescope.load_extension('fzf')
 
 local M = {}
 
