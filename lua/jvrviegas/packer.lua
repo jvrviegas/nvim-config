@@ -11,12 +11,6 @@ packer.startup(function(use)
 	-- Packer can manage itself
 	use('wbthomason/packer.nvim')
 
-	use({ 'rmehri01/onenord.nvim', branch = 'main' })
-	use({
-		'svrana/neosolarized.nvim',
-		requires = { 'tjdevries/colorbuddy.nvim' },
-	})
-
 	use({
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -62,6 +56,7 @@ packer.startup(function(use)
 	use('folke/tokyonight.nvim')
 	use({ 'rose-pine/neovim', as = 'rose-pine' })
 	-- Plug 'one-dark/onedark.nvim'
+	use({ 'catppuccin/nvim', as = 'catppuccin' })
 
 	-- Syntax Plugins
 	use({ 'styled-components/vim-styled-components', branch = 'main' })
@@ -73,7 +68,7 @@ packer.startup(function(use)
 	use('hrsh7th/cmp-path')
 	use('hrsh7th/cmp-cmdline')
 	use('hrsh7th/nvim-cmp')
-	-- Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+	use({ 'codota/tabnine-nvim', run = './dl_binaries.sh' })
 
 	-- Snippets
 	use('L3MON4D3/LuaSnip') -- Snippets plugin
