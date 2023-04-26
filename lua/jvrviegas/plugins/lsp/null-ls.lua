@@ -18,7 +18,7 @@ local sources = {
 	diagnostics.eslint_d.with({
 		diagnostics_format = diagnostics_code_template,
 		condition = function(utils)
-			return utils.root_has_file({ '.eslintrc.json', '.eslintrc.js' })
+			return utils.root_has_file({ '.eslintrc.json', '.eslintrc.js', 'functions/.eslintrc.json', 'functions/.eslintrc' })
 		end,
 	}),
 	diagnostics.luacheck.with({
