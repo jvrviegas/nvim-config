@@ -53,6 +53,10 @@ keymap.set('n', '<C-u>', '<C-u>zz')
 keymap.set('n', 'n', 'nzzzv')
 keymap.set('n', 'N', 'Nzzzv')
 
+-- set keys to choose git diff
+keymap.set('n', 'gh', '<cmd>diffget //2<CR>')
+keymap.set('n', 'gl', '<cmd>diffget //3<CR>')
+
 -- set keys to move tabs left and right
 keymap.set('n', '<A-Left>', '<cmd>-tabmove<cr>')
 keymap.set('n', '<A-Right>', '<cmd>+tabmove<cr>')
@@ -84,8 +88,8 @@ keymap.set('n', '<leader>gh', ':0Gclog<cr>')
 keymap.set('n', '<leader>cqf', ":call setqflist([], 'r') | cclose<cr>")
 
 -- NvimTree
-keymap.set('n', '<leader>s', ':lua require("nvim-tree").toggle(false, true)<CR>')
-keymap.set('n', '<leader>mn', ':NERDTreeMirror<CR>')
+keymap.set('n', '<leader>s', ':NvimTreeToggle<CR>')
+-- keymap.set('n', '<leader>mn', ':NERDTreeMirror<CR>')
 keymap.set('n', '<leader>f', ':NvimTreeFindFile<CR>')
 
 -- LspSaga
