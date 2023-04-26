@@ -1,9 +1,6 @@
--- local onenord = require('jvrviegas.plugins.theme.onenord')
--- local tokyonight = require('jvrviegas.plugins.theme.tokyonight')
-local rosepine = require('jvrviegas.plugins.theme.rose-pine')
+local theme_config = require('jvrviegas.plugins.theme.catppuccin')
 
--- onenord.setup()
--- tokyonight.setup()
-rosepine.setup()
+theme_config.setup()
 
-vim.cmd([[colorscheme rose-pine]])
+-- vim.o.background = 'dark'
+vim.cmd([[colorscheme catppuccin]])
