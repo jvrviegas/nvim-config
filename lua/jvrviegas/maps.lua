@@ -89,7 +89,6 @@ keymap.set('n', '<leader>cqf', ":call setqflist([], 'r') | cclose<cr>")
 
 -- NvimTree
 keymap.set('n', '<leader>s', ':NvimTreeToggle<CR>')
--- keymap.set('n', '<leader>mn', ':NERDTreeMirror<CR>')
 keymap.set('n', '<leader>f', ':NvimTreeFindFile<CR>')
 
 -- LspSaga
@@ -102,6 +101,8 @@ keymap.set('n', '<leader>a', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
 keymap.set('n', '<leader>d', '<cmd>Lspsaga show_cursor_diagnostics<CR>', opts)
 keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
 keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+keymap.set('n', '<leader>sb', '<cmd>Lspsaga show_buf_diagnostics<CR>', opts)
+keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opts)
 
 -- Blamer
 keymap.set('n', '<leader>gb', ':BlamerToggle<cr>')
