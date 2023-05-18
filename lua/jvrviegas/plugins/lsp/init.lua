@@ -98,6 +98,7 @@ for _, server in ipairs({
 	'tsserver',
 	'cssls',
 	'clangd',
+	'rust_analyzer',
 }) do
 	require('jvrviegas.plugins.lsp.' .. server).setup(on_attach, capabilities)
 end

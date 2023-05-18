@@ -13,6 +13,7 @@ local sources = {
 	}),
 	formatting.stylua,
 	formatting.clang_format,
+	formatting.rustfmt,
 	-- diagnostics
 	diagnostics.clang_check,
 	diagnostics.eslint_d.with({
