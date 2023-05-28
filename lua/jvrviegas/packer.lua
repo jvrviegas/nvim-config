@@ -69,6 +69,7 @@ packer.startup(function(use)
 	use('hrsh7th/cmp-cmdline')
 	use('hrsh7th/nvim-cmp')
 	use({ 'codota/tabnine-nvim', run = './dl_binaries.sh' })
+	use('Exafunction/codeium.vim')
 
 	-- Snippets
 	use('L3MON4D3/LuaSnip') -- Snippets plugin
