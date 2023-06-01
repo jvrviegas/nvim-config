@@ -26,7 +26,7 @@ local sources = {
 		diagnostics_format = diagnostics_code_template,
 	}),
 	-- code actions
-	-- code_actions.eslint_d,
+	code_actions.eslint_d,
 	code_actions.gitsigns,
 	code_actions.gitrebase,
 	-- hover
