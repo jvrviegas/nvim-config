@@ -1,6 +1,6 @@
-local null_ls = require("null-ls")
+local null_ls = require('null-ls')
 
-local diagnostics_code_template = "[#{s}] #{m} (#{c})"
+local diagnostics_code_template = '[#{s}] #{m} (#{c})'
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
@@ -8,18 +8,18 @@ local hover = null_ls.builtins.hover
 
 local sources = {
 	-- formatting
-	formatting.prettierd.with({
+	formatting.eslint_d.with({
 		diagnostics_format = diagnostics_code_template,
-		condition = function(utils)
-			return utils.root_has_file({ "prettier.config.js", ".prettierrc", ".prettierrc.json", ".prettierrc.js" })
-		end,
 	}),
 	formatting.stylua,
+	formatting.clang_format,
+	formatting.rustfmt,
 	-- diagnostics
+	diagnostics.clang_check,
 	diagnostics.eslint_d.with({
 		diagnostics_format = diagnostics_code_template,
 		condition = function(utils)
-			return utils.root_has_file({ ".eslintrc.json", ".eslintrc.js" })
+			return utils.root_has_file({ '.eslintrc.json', '.eslintrc.js', 'functions/.eslintrc.json', 'functions/.eslintrc' })
 		end,
 	}),
 	diagnostics.luacheck.with({

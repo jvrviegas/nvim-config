@@ -1,3 +1,6 @@
-local onenord = require("jvrviegas.theme.onenord")
+local theme_config = require('jvrviegas.plugins.theme.catppuccin')
 
-onenord.setup()
+theme_config.setup()
+
+-- vim.o.background = 'dark'
+vim.cmd([[colorscheme catppuccin]])

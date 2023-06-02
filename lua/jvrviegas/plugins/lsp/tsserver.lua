@@ -1,4 +1,4 @@
-local typescript = require("typescript")
+local typescript = require('typescript')
 
 local M = {}
 M.setup = function(on_attach, capabilities)
