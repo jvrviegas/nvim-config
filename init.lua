@@ -225,6 +225,14 @@ require('jvrviegas.settings')
 
 -- [[ Basic Keymaps ]]
 
+-- center the view according to the cursor when scrolling
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- center the view according to the cursor when searching
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
 -- set leader + w to write buffers
 -- vim.keymap.set('n', '<leader>w', ':w<cr>')
 
