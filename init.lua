@@ -234,10 +234,10 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- set leader + w to write buffers
--- vim.keymap.set('n', '<leader>w', ':w<cr>')
+vim.keymap.set('n', '<leader>w', ':w<cr>')
 
 -- set leader + q to quit file
--- vim.keymap.set('n', '<leader>q', ':q<cr>')
+vim.keymap.set('n', '<leader>q', ':q<cr>')
 
 -- set leader + r to switch between two most recent buffers
 vim.keymap.set('n', '<leader>r', '<C-^>')
