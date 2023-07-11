@@ -423,8 +423,6 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
-  eslint = {},
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -455,6 +453,17 @@ mason_lspconfig.setup_handlers({
       settings = servers[server_name],
     })
   end,
+})
+
+require('lspconfig').eslint.setup({
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+    on_attach(client, bufnr)
+  end
 })
 
 -- [[ Configure nvim-cmp ]]
