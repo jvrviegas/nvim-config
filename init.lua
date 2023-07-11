@@ -250,6 +250,14 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Clear the quickfix list
+vim.keymap.set('n', '<leader>cqf', ":call setqflist([], 'r') | cclose<cr>")
+
+-- [[ Vim Fugitive Keymaps ]]
+vim.keymap.set('n', '<leader>gs', ':Git<cr>', { desc = "[G]it [S]ummary" })
+vim.keymap.set('n', '<leader>ds', ':Gdiffsplit<cr>', { desc = "Git [D]iff [S]plit" })
+vim.keymap.set('n', '<leader>gh', ':0Gclog<cr>', { desc = "[G]it [H]istory" })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
