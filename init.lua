@@ -225,22 +225,7 @@ require('jvrviegas.settings')
 
 -- [[ Basic Keymaps ]]
 
--- center the view according to the cursor when scrolling
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
-
--- center the view according to the cursor when searching
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
-
--- set leader + w to write buffers
-vim.keymap.set('n', '<leader>w', ':w<cr>')
-
--- set leader + q to quit file
-vim.keymap.set('n', '<leader>q', ':q<cr>')
-
--- set leader + r to switch between two most recent buffers
-vim.keymap.set('n', '<leader>r', '<C-^>')
+require('custom.keymaps')
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -249,14 +234,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
--- Clear the quickfix list
-vim.keymap.set('n', '<leader>cqf', ":call setqflist([], 'r') | cclose<cr>")
-
--- [[ Vim Fugitive Keymaps ]]
-vim.keymap.set('n', '<leader>gs', ':Git<cr>', { desc = "[G]it [S]ummary" })
-vim.keymap.set('n', '<leader>ds', ':Gdiffsplit<cr>', { desc = "Git [D]iff [S]plit" })
-vim.keymap.set('n', '<leader>gh', ':0Gclog<cr>', { desc = "[G]it [H]istory" })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
