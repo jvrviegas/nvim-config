@@ -9,22 +9,22 @@ keymap.set('n', 'n', 'nzzzv')
 keymap.set('n', 'N', 'Nzzzv')
 
 -- set leader + w to write buffers
-keymap.set('n', '<leader>w', ':w<cr>')
+keymap.set('n', '<leader>w', ':w<cr>', { desc = "Quick [W]rite" })
 
 -- set leader + q to quit file
-keymap.set('n', '<leader>q', ':q<cr>')
+keymap.set('n', '<leader>q', ':q<cr>', { desc = "Quick [Q]uit" })
 
 -- set leader + r to switch between two most recent buffers
-keymap.set('n', '<leader>r', '<C-^>')
+keymap.set('n', '<leader>r', '<C-^>', { desc = "Switch between two most [R]ecent buffers" })
 
 -- set leader + c to copy selected to clipboard
-keymap.set('v', '<leader>c', '"+y')
+keymap.set('v', '<leader>c', '"+y', { desc = "[C]opy to clipboard" })
 
 -- set leader + v to paste from clipboard
-keymap.set('n', '<leader>v', '"+gP')
+keymap.set('n', '<leader>v', '"+gP', { desc = "Paste from clipboard" })
 
 -- Clear the quickfix list
-keymap.set('n', '<leader>cqf', ":call setqflist([], 'r') | cclose<cr>")
+keymap.set('n', '<leader>cqf', ":call setqflist([], 'r') | cclose<cr>", { desc = "[C]lear the [Q]uick [F]ix list" })
 
 -- [[ Vim Fugitive Keymaps ]]
 keymap.set('n', '<leader>gs', ':Git<cr>', { desc = "[G]it [S]ummary" })
