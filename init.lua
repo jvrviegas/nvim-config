@@ -262,8 +262,8 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
--- Import custom settings
-require('custom.settings')
+-- Import custom options
+require('custom.options')
 
 -- [[ Basic Keymaps ]]
 

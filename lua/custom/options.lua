@@ -1,3 +1,5 @@
+-- [[ Setting custom options ]]
+
 -- Set relative numbers
 vim.o.relativenumber = true
 
