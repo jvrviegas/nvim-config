@@ -10,6 +10,9 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
+    vim.keymap.set("n", "<leader>nt", ":Neotree toggle<cr>", { desc = "[N]eotree [T]oggle" })
+    vim.keymap.set("n", "<leader>rf", ":Neotree reveal<cr>", { desc = "Neotree [R]eveal [F]ile" })
+
     require("neo-tree").setup({
       filesystem = {
         filtered_items = {
