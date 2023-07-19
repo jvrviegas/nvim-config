@@ -30,3 +30,9 @@ keymap.set('n', '<leader>cqf', ":call setqflist([], 'r') | cclose<cr>", { desc =
 keymap.set('n', '<leader>gs', ':Git<cr>', { desc = "[G]it [S]ummary" })
 keymap.set('n', '<leader>ds', ':Gdiffsplit<cr>', { desc = "Git [D]iff [S]plit" })
 keymap.set('n', '<leader>gh', ':0Gclog<cr>', { desc = "[G]it [H]istory" })
+
+-- [[ Vim Diff Keymaps ]]
+-- Choose the left side modifications
+keymap.set('n', 'gh', '<cmd>diffget //3<cr>')
+-- Choose the right side modifications
+keymap.set('n', 'gl', '<cmd>diffget //2<cr>')
