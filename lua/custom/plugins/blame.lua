@@ -6,4 +6,7 @@ return {
     vim.g.gitblame_delay = 500
     vim.keymap.set("n", "<leader>b", ":GitBlameToggle<cr>", { desc = "Git [B]lame Toggle" })
   end,
+  config = function()
+    vim.cmd([[ GitBlameDisable ]])
+  end
 }
