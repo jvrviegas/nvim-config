@@ -176,8 +176,11 @@ require('lazy').setup({
     opts = {
       indent = {
         char = '┊'
+      },
+      scope = {
+        enabled = false
       }
-    }
+    },
   },
 
   -- "gc" to comment visual regions/lines
