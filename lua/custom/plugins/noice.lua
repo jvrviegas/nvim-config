@@ -3,12 +3,18 @@ return {
   config = function()
     require("noice").setup({
       -- add any options here
-      -- routes = {
-      --   {
-      --     view = "notify",
-      --     filter = { event = "msg_showmode" },
-      --   },
-      -- },
+      routes = {
+        {
+          view = "notify",
+          filter = {
+            event = "notify",
+            message = "No information available"
+          },
+          opts = {
+            skip = true
+          }
+        },
+      },
     })
   end,
   dependencies = {
