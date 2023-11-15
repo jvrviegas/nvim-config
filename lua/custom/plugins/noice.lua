@@ -16,6 +16,9 @@ return {
         },
       },
     })
+    require("notify").setup({
+      background_colour = "#000000"
+    })
   end,
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
