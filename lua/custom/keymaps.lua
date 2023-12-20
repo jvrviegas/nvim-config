@@ -36,6 +36,6 @@ keymap.set('n', '<leader>gh', ':0Gclog<cr>', { desc = "[G]it [H]istory" })
 
 -- [[ Vim Diff Keymaps ]]
 -- Choose the left side modifications
-keymap.set('n', 'gn', '<cmd>diffget //2<cr>')
+keymap.set('n', 'gt', '<cmd>diffget //2<cr>')
 -- Choose the right side modifications
-keymap.set('n', 'gt', '<cmd>diffget //3<cr>')
+keymap.set('n', 'gn', '<cmd>diffget //3<cr>')
