@@ -27,7 +27,8 @@ keymap.set('n', '<leader>v', '"+gP', { desc = "Paste from clipboard" })
 keymap.set('n', '<leader>cqf', ":call setqflist([], 'r') | cclose<cr>", { desc = "[C]lear the [Q]uick [F]ix list" })
 
 -- Display the current path relative to the tmux session path
-keymap.set('n', '<leader>cd', ":echo fnamemodify(expand('%'), ':~:.')", { desc = "Display [C]urrent [D]irectory path" })
+keymap.set('n', '<leader>cd', ":echo fnamemodify(expand('%'), ':~:.')<cr>",
+	{ desc = "Display [C]urrent [D]irectory path" })
 
 -- [[ Vim Fugitive Keymaps ]]
 keymap.set('n', '<leader>gs', ':Git<cr>', { desc = "[G]it [S]ummary" })
