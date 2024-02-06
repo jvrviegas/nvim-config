@@ -11,3 +11,6 @@ vim.o.relativenumber = true
 
 -- Set splits to open always in the right
 vim.opt.splitright = true
+
+-- Set how many lines from the end and top it should start scrolling
+vim.opt.scrolloff = 8
