@@ -335,7 +335,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'lua', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'prisma', 'sql' },
+    ensure_installed = { 'lua', 'rust', 'javascript', 'tsx', 'typescript', 'vimdoc', 'vim', 'prisma', 'sql' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
