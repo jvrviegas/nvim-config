@@ -417,7 +417,6 @@ local servers = {
   rust_analyzer = {},
   tsserver = {},
   prismals = {},
-  sqlls = {},
   gopls = {},
   lua_ls = {
     Lua = {
