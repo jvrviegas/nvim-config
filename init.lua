@@ -146,13 +146,15 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'catppuccin/nvim',
+    'rose-pine/neovim',
     priority = 1000,
     config = function()
-      require('catppuccin').setup({
-        transparent_background = true
+      require('rose-pine').setup({
+        styles = {
+          transparency = true
+        }
       })
-      vim.cmd.colorscheme('catppuccin')
+      vim.cmd.colorscheme('rose-pine-moon')
     end,
   },
 
@@ -163,7 +165,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'catppuccin',
+        theme = 'rose-pine',
         component_separators = '|',
         section_separators = '',
       },
@@ -318,7 +320,7 @@ vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { d
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
-    winblend = 10,
+    winblend = 20,
     previewer = false,
   }))
 end, { desc = '[/] Fuzzily search in current buffer' })
