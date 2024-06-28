@@ -87,7 +87,7 @@ require('lazy').setup({
       { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
-      'folke/neodev.nvim',
+      { 'folke/lazydev.nvim',      ft = 'lua',     opts = {} }
     },
   },
 
@@ -145,7 +145,6 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
     'rose-pine/neovim',
     priority = 1000,
     config = function()
@@ -170,6 +169,11 @@ require('lazy').setup({
         section_separators = '',
       },
     },
+    config = function()
+      require('lualine').setup({
+        sections = { lualine_c = { 'lsp_progress' }, lualine_x = { 'tabnine' } }
+      })
+    end
   },
 
   {
@@ -420,6 +424,7 @@ local servers = {
   tsserver = {},
   prismals = {},
   gopls = {},
+  biome = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -427,9 +432,6 @@ local servers = {
     },
   },
 }
-
--- Setup neovim lua configuration
-require('neodev').setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
