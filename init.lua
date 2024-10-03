@@ -145,16 +145,22 @@ require('lazy').setup({
   },
 
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    'folke/tokyonight.nvim',
+    name = 'tokyonight',
     priority = 1000,
     config = function()
-      require('rose-pine').setup({
+      require('tokyonight').setup({
+        transparent = true,
         styles = {
-          transparency = true
-        }
+          sidebars = 'transparent',
+          floats = 'transparent',
+        },
+        on_colors = function()
+        end,
+        on_highlights = function()
+        end
       })
-      vim.cmd.colorscheme('rose-pine-moon')
+      vim.cmd.colorscheme('tokyonight')
     end,
   },
 
@@ -165,7 +171,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'rose-pine',
+        theme = 'tokyonight',
         component_separators = '|',
         section_separators = '',
       },
