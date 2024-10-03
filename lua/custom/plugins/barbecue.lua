@@ -8,6 +8,6 @@ return {
   },
   opts = {
     -- configurations go here
-    theme = "catppuccin"
+    theme = "tokyonight"
   }
 }
