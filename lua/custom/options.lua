@@ -14,3 +14,11 @@ vim.opt.splitright = true
 
 -- Set how many lines from the end and top it should start scrolling
 vim.opt.scrolloff = 8
+
+-- Configuration for formatting json response on rest.nvim
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "json" },
+	callback = function()
+		vim.api.nvim_set_option_value("formatprg", "jq", { scope = 'local' })
+	end,
+})
