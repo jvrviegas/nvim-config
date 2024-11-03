@@ -40,3 +40,6 @@ keymap.set('n', '<leader>gh', ':0Gclog<cr>', { desc = "[G]it [H]istory" })
 keymap.set('n', 'gh', '<cmd>diffget //2<cr>')
 -- Choose the right side modifications
 keymap.set('n', 'gl', '<cmd>diffget //3<cr>')
+
+-- [[ Telescope ]]
+vim.keymap.set('n', '<leader>td', require('telescope.builtin').diagnostics, { desc = '[td] Find existing diagnostics' })
