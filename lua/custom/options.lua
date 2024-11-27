@@ -9,6 +9,11 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSig
 -- Set relative numbers
 vim.o.relativenumber = true
 
+-- Set the width of a tab character (number of spaces)
+vim.o.tabstop = 4      -- Number of spaces a tab counts for
+vim.o.shiftwidth = 4   -- Size of an autoindent
+vim.o.expandtab = true -- Use spaces instead of tabs
+
 -- Set splits to open always in the right
 vim.opt.splitright = true
 
