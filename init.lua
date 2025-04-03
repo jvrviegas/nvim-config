@@ -146,22 +146,14 @@ require('lazy').setup({
   },
 
   {
-    'folke/tokyonight.nvim',
-    name = 'tokyonight',
+    'loctvl842/monokai-pro.nvim',
     priority = 1000,
     config = function()
-      require('tokyonight').setup({
-        transparent = true,
-        styles = {
-          sidebars = 'transparent',
-          floats = 'transparent',
-        },
-        on_colors = function()
-        end,
-        on_highlights = function()
-        end
+      require('monokai-pro').setup({
+        transparent_background = true,
+        background_clear = { "float_win", "telescope", "neo-tree", "notify", "noice" }
       })
-      vim.cmd.colorscheme('tokyonight')
+      vim.cmd.colorscheme('monokai-pro')
     end,
   },
 
@@ -172,7 +164,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'tokyonight',
+        theme = 'monokai-pro',
         component_separators = '|',
         section_separators = '',
       },
