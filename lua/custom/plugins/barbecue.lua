@@ -8,6 +8,6 @@ return {
   },
   opts = {
     -- configurations go here
-    theme = "tokyonight"
+    theme = "monokai-pro",
   }
 }
