@@ -40,3 +40,8 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_set_option_value("formatprg", "jq", { scope = 'local' })
 	end,
 })
+
+-- Set command to open Finder on current working directory
+vim.api.nvim_create_user_command('OpenInFinder', function()
+	vim.cmd('!open ..')
+end, {})
