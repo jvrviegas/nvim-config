@@ -82,6 +82,8 @@ require('lazy').setup({
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
 
+      { 'saghen/blink.cmp' },
+
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
@@ -91,7 +93,7 @@ require('lazy').setup({
     },
   },
 
-  {
+  --[[ {
     -- Autocompletion
     'yioneko/nvim-cmp',
     branch = 'perf-up',
@@ -106,7 +108,7 @@ require('lazy').setup({
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
     },
-  },
+  }, ]]
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim',          opts = {} },
@@ -435,8 +437,9 @@ local servers = {
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require('mason-lspconfig')
@@ -467,7 +470,7 @@ require('lspconfig').eslint.setup({
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
-local cmp = require('cmp')
+--[[ local cmp = require('cmp')
 local luasnip = require('luasnip')
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup({})
@@ -534,7 +537,7 @@ cmp.setup({
       end,
     }),
   },
-})
+}) ]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
