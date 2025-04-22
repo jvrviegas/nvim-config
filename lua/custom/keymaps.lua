@@ -43,3 +43,18 @@ keymap.set('n', 'gl', '<cmd>diffget //3<cr>')
 
 -- [[ Telescope ]]
 vim.keymap.set('n', '<leader>td', require('telescope.builtin').diagnostics, { desc = '[td] Find existing diagnostics' })
+
+
+---------------------
+--- CUSTOM MACROS ---
+---------------------
+local esc = vim.api.nvim_replace_termcodes('<esc>', true, true, true)
+
+--[[ vim.ap.nvim_create_autocmd("FileType", {
+	group = "JSLogMacro",
+	pattern = { "javascript", "typescript" },
+	callback = function()
+		vim.fn.setreg("l", "yoconsole.log()<80>kl{}<80>kl <80>kl" .. esc .. "pA;" .. esc)
+	end,
+}) ]]
+vim.fn.setreg("l", "yoconsole.log({ " .. esc .. "pa });" .. esc)
