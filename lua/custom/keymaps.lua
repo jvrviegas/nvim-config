@@ -43,6 +43,7 @@ keymap.set('n', 'gl', '<cmd>diffget //3<cr>')
 
 -- [[ Telescope ]]
 vim.keymap.set('n', '<leader>td', require('telescope.builtin').diagnostics, { desc = '[td] Find existing diagnostics' })
+vim.keymap.set('n', '<leader>tb', require('telescope.builtin').git_branches, { desc = '[tb] Find existing branches' })
 
 
 ---------------------
