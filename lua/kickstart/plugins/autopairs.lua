@@ -1,4 +1,5 @@
--- File: lua/custom/plugins/autopairs.lua
+-- autopairs
+-- https://github.com/windwp/nvim-autopairs
 
 return {
   'windwp/nvim-autopairs',
