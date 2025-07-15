@@ -1,23 +1,4 @@
 -- [[ Setting custom options ]]
--- Set VIM diagnostic options
-vim.diagnostic.config({
-	signs = true,
-	underline = true,
-	virtual_text = true,
-	update_in_insert = true,
-	float = {
-		-- UI.
-		border = 'rounded',
-		focusable = true,
-	}
-})
-
-
--- Set custom diagnostic signs
-vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
-vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
 -- Set relative numbers
 vim.o.relativenumber = true
